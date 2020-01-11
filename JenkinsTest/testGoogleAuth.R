@@ -14,10 +14,7 @@
 #                              dimensions  = "ga:date",
 #                              metrics     = "ga:users")
 
-googlesheets4::sheets_auth(
-  email = "violetta12.07@gmail.com" 
-  # path = jsonlite::fromJSON("realweb-152714-99aec2ab0ea3.json")
-)
+googlesheets4::sheets_deauth()
 
 # upload table from G.Sheets
 data_1 <- googlesheets4::read_sheet("14bwjhoCegcFKdBYrWquoAWqGIFWdOXf2MbpXzcqzXEU", sheet = "plan")
@@ -25,7 +22,6 @@ data_1 <- googlesheets4::read_sheet("14bwjhoCegcFKdBYrWquoAWqGIFWdOXf2MbpXzcqzXE
 write.csv(data_1, "data_1.csv")
 
 write("testGoogleAuth - success", stdout())
-
 
 
 
