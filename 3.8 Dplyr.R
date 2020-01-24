@@ -60,6 +60,17 @@ my_df <- mtcars %>%
   slice(1:10) %>% 
   rename('Miles per gallon' = mpg, 'Gross horsepower' = hp)
 
+# Посчитать Summary
+segmentRegionAfter %>%
+  select(timeToGoal, region) %>% 
+  group_by(region) %>%
+  summarise(mean = mean(timeToGoal), 
+            median = median(timeToGoal),
+            Freq = n(), 
+            q1 = quantile(timeToGoal, probs = 0.25),
+            q3 = quantile(timeToGoal, probs = 0.75)
+  )
+
 
 df <- read.csv("https://stepik.org/media/attachments/course/4852/dota_hero_stats.csv")
 df
